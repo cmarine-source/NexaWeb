@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti - Web Designer</title>
+    <title>Home - Web Designer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -59,7 +57,7 @@
     </style>
 </head>
 <body class="bg-white">
-    <header class="fixed w-full bg-white shadow-sm z-50" style="height: 80px;">
+    <header class="fixed w-full bg-white shadow-sm z-50 h-20">
         <div class="container mx-auto px-6 h-full flex items-center justify-between">
             <div class="logo-container">
                 <a href="index.html">
@@ -72,7 +70,7 @@
                 <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
                 <a href="contact.html" class="font-medium hover:text-primary transition">Contatti</a>
             </nav>
-            <button class="md:hidden" id="mobile-menu-btn">
+            <button class="md:hidden" id="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i data-feather="menu"></i>
             </button>
         </div>
@@ -84,112 +82,112 @@
         </div>
     </header>
 
-    <section class="pt-32 pb-20 bg-secondary">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Ciao, sono Marco – Creo siti web per negozi locali</h1>
-                <p class="text-xl text-gray-600 mb-8">Siti vetrina moderni, veloci e ottimizzati per smartphone</p>
-                <a href="services.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block">Scopri i miei lavori</a>
-            </div>
-            <div class="md:w-1/2" data-aos="fade-left">
-                <img src="http://static.photos/technology/1024x576/1" alt="Mockup sito web" class="rounded-lg shadow-xl">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Pacchetti su misura per il tuo business</h2>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 md:w-1/3" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-bold mb-4">Base</h3>
-                    <p class="text-gray-600 mb-6">Perfetto per chi inizia</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Max 3 pagine</span>
-                        </li>
-                          <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Homepage</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Design semplice</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Ottimizzazione mobile</span>
-                        </li>
-                    </ul>
-                    <div class="text-3xl font-bold mb-6">€350</div>
-                    <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
+    <main>
+        <section class="pt-32 pb-20 bg-secondary">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Ciao, sono Marco – Creo siti web per negozi locali</h1>
+                    <p class="text-xl text-gray-600 mb-8">Siti vetrina moderni, veloci e ottimizzati per smartphone</p>
+                    <a href="services.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block">Scopri i miei lavori</a>
                 </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="https://source.unsplash.com/1024x576/?web-design" alt="Mockup di un sito web reattivo su computer, tablet e smartphone" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Pacchetti su misura per il tuo business</h2>
                 
-                <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-primary relative md:w-1/3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="popular-badge absolute bg-primary text-white text-xs font-bold px-3 py-1 rounded-full -top-3 right-4">PIÙ SCELTO</div>
-                    <h3 class="text-2xl font-bold mb-4">Premium</h3>
-                    <p class="text-gray-600 mb-6">Soluzione completa</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Fino a 6 pagine</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Design personalizzato e responsive</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>SEO base</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Galleria immagini</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Pagina contatti avanzata</span>
-                        </li>
-                    </ul>
-                    <div class="text-3xl font-bold mb-6">€500-700</div>
-                    <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
-                </div>
-            </div>
-            
-            <p class="text-center mt-8 text-gray-500" data-aos="fade-up">Offerta valida solo per i primi 5 clienti del mese</p>
-        </div>
-    </section>
-
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Cosa dicono i miei clienti</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white bg-opacity-10 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center mb-4">
-                        <img src="http://static.photos/people/200x200/1" alt="Cliente" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <h4 class="font-bold">Nino Gaetano</h4>
-                            <p class="text-sm opacity-80">Commerciante</p>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold mb-4">Base</h3>
+                        <p class="text-gray-600 mb-6">Perfetto per chi inizia</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Max 3 pagine</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Homepage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Design semplice</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Ottimizzazione mobile</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">€350</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
-                    <p>"Ho affidato a Michael la realizzazione del sito per il mio negozio e non potrei essere più soddisfatto! Il sito è moderno, veloce e completamente responsive, proprio come volevo. Michael è stato disponibile, professionale e ha capito subito cosa serviva al mio business. Consigliatissimo!"</p>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-primary relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="popular-badge absolute bg-primary text-white text-xs font-bold px-3 py-1 rounded-full -top-3 right-4">PIÙ SCELTO</div>
+                        <h3 class="text-2xl font-bold mb-4">Premium</h3>
+                        <p class="text-gray-600 mb-6">Soluzione completa</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Fino a 6 pagine</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Design personalizzato e responsive</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>SEO base</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Galleria immagini</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Pagina contatti avanzata</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">€500-700</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
+                    </div>
                 </div>
                 
+                <p class="text-center mt-8 text-gray-500" data-aos="fade-up">Offerta valida solo per i primi 5 clienti del mese</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-20 bg-secondary">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Pronto a far crescere il tuo business online?</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contattami oggi stesso per un preventivo personalizzato.</p>
-            <a href="contact.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block" data-aos="fade-up" data-aos-delay="200">Richiedi preventivo</a>
-        </div>
-    </section>
+        <section class="py-20 bg-primary text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Cosa dicono i miei clienti</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white bg-opacity-10 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            <img src="https://source.unsplash.com/200x200/?portrait" alt="Ritratto di Nino Gaetano, cliente soddisfatto" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Nino Gaetano</h4>
+                                <p class="text-sm opacity-80">Commerciante</p>
+                            </div>
+                        </div>
+                        <p>"Ho affidato a Michael la realizzazione del sito per il mio negozio e non potrei essere più soddisfatto! Il sito è moderno, veloce e completamente responsive, proprio come volevo. Michael è stato disponibile, professionale e ha capito subito cosa serviva al mio business. Consigliatissimo!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-secondary">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Pronto a far crescere il tuo business online?</h2>
+                <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contattami oggi stesso per un preventivo personalizzato.</p>
+                <a href="contact.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block" data-aos="fade-up" data-aos-delay="200">Richiedi preventivo</a>
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6">
@@ -219,7 +217,7 @@
                         <ul class="space-y-2">
                             <li><a href="services.html" class="text-gray-400 hover:text-white transition">Siti vetrina</a></li>
                             <li><a href="services.html" class="text-gray-400 hover:text-white transition">Design responsive</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">manutenzione</a></li>
+                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Manutenzione</a></li>
                         </ul>
                     </div>
                     
@@ -245,6 +243,8 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
         AOS.init({
             duration: 800,
