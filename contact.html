@@ -8,7 +8,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -44,26 +43,47 @@
         .contact-card:hover {
             transform: translateY(-5px);
         }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 16px;
+        }
+        @media (max-width: 767px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
     <header class="fixed w-full bg-white shadow-sm z-50" style="height: 80px;">
         <div class="container mx-auto px-6 h-full flex items-center justify-between">
-            <div class="text-2xl font-bold text-primary">Logo</div>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="https://i.imgur.com/rrzawAZ.png" alt="Logo di NexaWeb" class="h-10">
+                </a>
+            </div>
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="font-medium hover:text-primary transition">Home</a>
                 <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
                 <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
                 <a href="contact.html" class="font-medium text-primary transition">Contatti</a>
             </nav>
-            <button class="md:hidden">
+            <button class="md:hidden" id="mobile-menu-btn">
                 <i data-feather="menu"></i>
             </button>
         </div>
+        <div id="mobile-menu" class="mobile-menu absolute top-20 left-0 w-full bg-white p-4 shadow-md flex-col space-y-4 md:hidden">
+            <a href="index.html" class="font-medium hover:text-primary transition">Home</a>
+            <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
+            <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
+            <a href="contact.html" class="font-medium text-primary transition">Contatti</a>
+        </div>
     </header>
 
-    <!-- Contact Section -->
     <section class="pt-32 pb-20">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row">
@@ -90,42 +110,42 @@
                         
                         <div class="contact-card bg-secondary p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
                             <div class="text-primary mb-4">
-                                <i data-feather="message-square" class="w-6 h-6"></i>
-                            </div>
-                            <h3 class="font-bold mb-2">WhatsApp</h3>
-                            <p class="text-gray-600">+39 123 456 789</p>
-                        </div>
-                        
-                        <div class="contact-card bg-secondary p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
-                            <div class="text-primary mb-4">
                                 <i data-feather="map-pin" class="w-6 h-6"></i>
                             </div>
-                            <h3 class="font-bold mb-2">Zona di lavoro</h3>
-                            <p class="text-gray-600">Milano e provincia</p>
+                            <h3 class="font-bold mb-2">Sede</h3>
+                            <p class="text-gray-600">Gaeta</p>
+                        </div>
+
+                        <div class="contact-card bg-secondary p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+                            <div class="text-primary mb-4">
+                                <i data-feather="instagram" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold mb-2">Social</h3>
+                            <p class="text-gray-600">@nexaweb</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="md:w-1/2" data-aos="fade-left">
-                    <form class="bg-white p-8 rounded-xl shadow-md">
+                    <form id="contact-form" action="#" method="POST" class="bg-white p-8 rounded-xl shadow-md">
                         <div class="mb-6">
                             <label for="name" class="block text-gray-700 font-medium mb-2">Nome e cognome</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                         </div>
                         
                         <div class="mb-6">
                             <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                         </div>
                         
                         <div class="mb-6">
                             <label for="phone" class="block text-gray-700 font-medium mb-2">Telefono (opzionale)</label>
-                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                         </div>
                         
                         <div class="mb-6">
                             <label for="message" class="block text-gray-700 font-medium mb-2">Messaggio</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
                         </div>
                         
                         <button type="submit" class="btn-primary px-8 py-3 rounded-full font-bold text-white w-full">Invia messaggio</button>
@@ -135,70 +155,66 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 bg-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Domande frequenti</h2>
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-12" data-aos="fade-up">Domande Frequenti</h2>
+        
+        <div class="max-w-3xl mx-auto space-y-4">
+            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                    <span class="flex-grow">Quanto tempo ci vuole per realizzare un sito?</span>
+                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </summary>
+                <div class="mt-4 text-gray-600 leading-relaxed">
+                    <p>In media, un sito base viene completato in 1 settimana, mentre un sito premium richiede 2-3 settimane. I tempi possono variare in base alla complessità del progetto e alla disponibilità del materiale da parte del cliente.</p>
+                </div>
+            </details>
             
-            <div class="max-w-3xl mx-auto">
-                <div class="mb-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-white p-6 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-bold mb-2 flex justify-between items-center">
-                            <span>Quanto tempo ci vuole per realizzare un sito?</span>
-                            <i data-feather="chevron-down" class="text-primary"></i>
-                        </h3>
-                        <p class="text-gray-600 mt-2">In media, un sito base viene completato in 1-2 settimane, mentre un sito premium richiede 2-4 settimane. I tempi possono variare in base alla complessità del progetto e alla disponibilità del materiale da parte del cliente.</p>
-                    </div>
+            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                    <span class="flex-grow">Fornite anche il servizio di hosting?</span>
+                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </summary>
+                <div class="mt-4 text-gray-600 leading-relaxed">
+                    <p>Non offro direttamente il servizio di hosting, ma posso consigliarti soluzioni affidabili e aiutarti a configurarle correttamente. In alternativa, posso occuparmi io della gestione dell’hosting e della manutenzione del sito con un piccolo pacchetto aggiuntivo, così non dovrai preoccuparti di nulla.</p>
                 </div>
-                
-                <div class="mb-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-white p-6 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-bold mb-2 flex justify-between items-center">
-                            <span>Fornite anche il servizio di hosting?</span>
-                            <i data-feather="chevron-down" class="text-primary"></i>
-                        </h3>
-                        <p class="text-gray-600 mt-2">Sì, offro un servizio di hosting gestito incluso nel prezzo per il primo anno. Successivamente, potrai scegliere se continuare con il mio servizio o gestire autonomamente l'hosting.</p>
-                    </div>
+            </details>
+            
+            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                    <span class="flex-grow">Posso modificare il sito da solo dopo la consegna?</span>
+                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </summary>
+                <div class="mt-4 text-gray-600 leading-relaxed">
+                    <p>Certamente! Tutti i miei siti vengono realizzati con un sistema di gestione dei contenuti (CMS) intuitivo che ti permette di aggiornare testi, immagini e prodotti in completa autonomia.</p>
                 </div>
-                
-                <div class="mb-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-white p-6 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-bold mb-2 flex justify-between items-center">
-                            <span>Posso modificare il sito da solo dopo la consegna?</span>
-                            <i data-feather="chevron-down" class="text-primary"></i>
-                        </h3>
-                        <p class="text-gray-600 mt-2">Certamente! Tutti i miei siti vengono realizzati con un sistema di gestione dei contenuti (CMS) intuitivo che ti permette di aggiornare testi, immagini e prodotti in completa autonomia.</p>
-                    </div>
+            </details>
+            
+            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                    <span class="flex-grow">Offrite servizi di manutenzione?</span>
+                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </summary>
+                <div class="mt-4 text-gray-600 leading-relaxed">
+                    <p>Sì, offro pacchetti di manutenzione che includono aggiornamenti di sicurezza, backup regolari e supporto tecnico. Possiamo discuterne insieme in base alle tue esigenze.</p>
                 </div>
-                
-                <div class="mb-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-white p-6 rounded-xl shadow-sm">
-                        <h3 class="text-xl font-bold mb-2 flex justify-between items-center">
-                            <span>Offrite servizi di manutenzione?</span>
-                            <i data-feather="chevron-down" class="text-primary"></i>
-                        </h3>
-                        <p class="text-gray-600 mt-2">Sì, offro pacchetti di manutenzione che includono aggiornamenti di sicurezza, backup regolari e supporto tecnico. Possiamo discuterne insieme in base alle tue esigenze.</p>
-                    </div>
-                </div>
-            </div>
+            </details>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Pronto a iniziare?</h2>
-            <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contattami oggi stesso per discutere del tuo progetto.</p>
-            <a href="#contact-form" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block" data-aos="fade-up" data-aos-delay="200">Scrivimi ora</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    </div>
+</section>
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
-                    <div class="text-2xl font-bold text-white mb-4">Logo</div>
+                    <div class="text-2xl font-bold text-white mb-4">NexaWeb</div>
                     <p class="text-gray-400">Creo siti web moderni per negozi locali.</p>
                 </div>
                 
@@ -218,7 +234,7 @@
                         <ul class="space-y-2">
                             <li><a href="#" class="text-gray-400 hover:text-white transition">Siti vetrina</a></li>
                             <li><a href="#" class="text-gray-400 hover:text-white transition">Design responsive</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Ottimizzazione mobile</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Manutenzione</a></li>
                         </ul>
                     </div>
                     
@@ -227,11 +243,11 @@
                         <ul class="space-y-2">
                             <li class="flex items-center">
                                 <i data-feather="mail" class="mr-2 text-gray-400"></i>
-                                <span class="text-gray-400">info@example.com</span>
+                                <span class="text-gray-400">info@nexaweb.net</span>
                             </li>
                             <li class="flex items-center">
                                 <i data-feather="phone" class="mr-2 text-gray-400"></i>
-                                <span class="text-gray-400">+39 123 456 789</span>
+                                <span class="text-gray-400">+39 379 171 2954</span>
                             </li>
                         </ul>
                     </div>
@@ -239,7 +255,7 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2025 Marco – Tutti i diritti riservati</p>
+                <p>© 2025 NexaWeb – Tutti i diritti riservati</p>
             </div>
         </div>
     </footer>
@@ -252,44 +268,40 @@
         });
         feather.replace();
         
-        // Mobile menu toggle
-        const mobileMenuButton = document.querySelector('.md\\:hidden');
-        const mobileMenu = document.querySelector('.md\\:flex');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-            mobileMenu.classList.toggle('flex-col');
-            mobileMenu.classList.toggle('absolute');
-            mobileMenu.classList.toggle('top-20');
-            mobileMenu.classList.toggle('left-0');
-            mobileMenu.classList.toggle('w-full');
-            mobileMenu.classList.toggle('bg-white');
-            mobileMenu.classList.toggle('p-4');
-            mobileMenu.classList.toggle('shadow-md');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
         });
         
-        // FAQ accordion
-        const faqItems = document.querySelectorAll('.bg-white.p-6.rounded-xl.shadow-sm');
+        const faqItems = document.querySelectorAll('.faq-item');
         faqItems.forEach(item => {
             const heading = item.querySelector('h3');
             const content = item.querySelector('p');
             const icon = item.querySelector('i');
             
-            // Hide all content initially except first one
-            if(item !== faqItems[0]) {
-                content.classList.add('hidden');
-                icon.setAttribute('data-feather', 'chevron-right');
-                feather.replace();
-            }
-            
             heading.addEventListener('click', () => {
+                const isHidden = content.classList.contains('hidden');
+                
+                // Chiudi tutte le altre risposte
+                faqItems.forEach(otherItem => {
+                    const otherContent = otherItem.querySelector('p');
+                    const otherIcon = otherItem.querySelector('i');
+                    if (otherContent !== content && !otherContent.classList.contains('hidden')) {
+                        otherContent.classList.add('hidden');
+                        otherIcon.setAttribute('data-feather', 'chevron-right');
+                    }
+                });
+                
+                // Apri/chiudi la risposta corrente
                 content.classList.toggle('hidden');
                 
-                if(content.classList.contains('hidden')) {
-                    icon.setAttribute('data-feather', 'chevron-right');
-                } else {
+                // Cambia l'icona
+                if (isHidden) {
                     icon.setAttribute('data-feather', 'chevron-down');
+                } else {
+                    icon.setAttribute('data-feather', 'chevron-right');
                 }
                 feather.replace();
             });
