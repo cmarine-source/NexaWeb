@@ -11,7 +11,6 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: #333333;
-            /* Mantenuto per prevenire scorrimenti orizzontali indesiderati in generale */
             overflow-x: hidden;
         }
         h1, h2, h3, h4 {
@@ -48,7 +47,6 @@
             top: -12px;
             right: 16px;
         }
-        /* Stili del menu mobile per mostrare/nascondere */
         @media (max-width: 767px) {
             .mobile-menu {
                 display: none;
@@ -57,44 +55,29 @@
                 display: flex;
             }
         }
-        /* AGGIUNTA/MODIFICA: allineamento per mobile */
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /* Spinge logo a sx e menu a dx */
-            width: 100%; /* Assicura che occupi tutto lo spazio disponibile */
-        }
-        @media (max-width: 767px) {
-            .header-inner {
-                padding-left: 1.5rem; /* px-6 in Tailwind */
-                padding-right: 1.5rem; /* px-6 in Tailwind */
-            }
-            /* Rimuovi eventuali margini automatici indesiderati sul pulsante */
-            #mobile-menu-btn {
-                margin-left: auto; /* Per spingerlo a destra */
-            }
-        }
     </style>
 </head>
 <body class="bg-white">
     <header class="fixed w-full bg-white shadow-sm z-50 h-20">
-        <div class="container mx-auto h-full flex items-center justify-between px-6"> <div class="header-inner">
-                <div class="logo-container">
-                    <a href="index.html">
-                        <img src="https://i.imgur.com/rrzawAZ.png" alt="Logo di NexaWeb" class="h-10">
-                    </a>
-                </div>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="index.html" class="font-medium text-primary transition">Home</a>
-                    <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
-                    <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
-                    <a href="contact.html" class="font-medium hover:text-primary transition">Contatti</a>
-                </nav>
-                <button class="md:hidden" id="mobile-menu-btn" aria-label="Toggle mobile menu">
-                    <i data-feather="menu"></i>
-                </button>
+        <div class="container mx-auto h-full flex items-center justify-between px-6">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="https://i.imgur.com/rrzawAZ.png" alt="Logo di NexaWeb" class="h-10">
+                </a>
             </div>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="font-medium text-primary transition">Home</a>
+                <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
+                <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
+                <a href="contact.html" class="font-medium hover:text-primary transition">Contatti</a>
+            </nav>
+            
+            <button class="md:hidden" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <i data-feather="menu"></i>
+            </button>
         </div>
+        
         <div id="mobile-menu" class="mobile-menu absolute top-20 left-0 w-full bg-white p-4 shadow-md flex-col space-y-4 md:hidden">
             <a href="index.html" class="font-medium text-primary transition">Home</a>
             <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
@@ -174,6 +157,35 @@
                             </li>
                         </ul>
                         <div class="text-3xl font-bold mb-6">€500-700</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold mb-4">E-commerce</h3>
+                        <p class="text-gray-600 mb-6">Vendita online completa</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Catalogo prodotti illimitato</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Carrello e checkout</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Metodi di pagamento</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Gestione ordini</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Area clienti</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">Preventivo personalizzato</div>
                         <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
                 </div>
