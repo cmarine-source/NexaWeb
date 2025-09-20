@@ -6,9 +6,6 @@
     <title>Servizi - Web Designer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -38,189 +35,211 @@
         .text-accent {
             color: #FFB400;
         }
-        .popular-badge {
-            top: -10px;
-            right: -10px;
-        }
-        .portfolio-item {
+        .contact-card {
             transition: all 0.3s ease;
         }
-        .portfolio-item:hover {
+        .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 16px;
+        }
+        @media (max-width: 767px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
-    <header class="fixed w-full bg-white shadow-sm z-50" style="height: 80px;">
+    <header class="fixed w-full bg-white shadow-sm z-50 h-20">
         <div class="container mx-auto px-6 h-full flex items-center justify-between">
-            <div class="text-2xl font-bold text-primary">Logo</div>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="https://i.imgur.com/rrzawAZ.png" alt="Logo di NexaWeb" class="h-10">
+                </a>
+            </div>
             <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="font-medium hover:text-primary transition">Home</a>
-                <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
-                <a href="services.html" class="font-medium text-primary transition">Servizi</a>
-                <a href="contact.html" class="font-medium hover:text-primary transition">Contatti</a>
+                <a href="index.html" class="font-medium text-gray-600 hover:text-primary transition">Home</a>
+                <a href="about.html" class="font-medium text-gray-600 hover:text-primary transition">Chi sono</a>
+                <a href="services.html" class="font-medium text-primary hover:text-primary transition">Servizi</a>
+                <a href="contact.html" class="font-medium text-gray-600 hover:text-primary transition">Contatti</a>
             </nav>
-            <button class="md:hidden">
+            <button class="md:hidden" id="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i data-feather="menu"></i>
             </button>
         </div>
+        <div id="mobile-menu" class="mobile-menu absolute top-20 left-0 w-full bg-white p-4 shadow-md flex-col space-y-4 md:hidden">
+            <a href="index.html" class="font-medium text-gray-600 hover:text-primary transition">Home</a>
+            <a href="about.html" class="font-medium text-gray-600 hover:text-primary transition">Chi sono</a>
+            <a href="services.html" class="font-medium text-primary hover:text-primary transition">Servizi</a>
+            <a href="contact.html" class="font-medium text-gray-600 hover:text-primary transition">Contatti</a>
+        </div>
     </header>
 
-    <!-- Services Section -->
-    <section class="pt-32 pb-20">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">I miei servizi</h1>
-            <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Soluzioni su misura per far crescere il tuo business online</p>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-8 mb-20">
-                <!-- Basic Package -->
-                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200 md:w-1/3" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-2xl font-bold mb-4">Base</h3>
-                    <p class="text-gray-600 mb-6">Perfetto per chi inizia</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Homepage personalizzata</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Pagina contatti con mappa</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Presentazione servizi base</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Design responsive</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Ottimizzazione base SEO</span>
-                        </li>
-                    </ul>
-                    <div class="text-3xl font-bold mb-6">€200</div>
-                    <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi preventivo</a>
-                </div>
+    <main>
+        <section class="pt-32 pb-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">I miei servizi</h1>
+                <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Soluzioni su misura per far crescere il tuo business online</p>
                 
-                <!-- Premium Package -->
-                <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-primary relative md:w-1/3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="popular-badge absolute bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">PIÙ SCELTO</div>
-                    <h3 class="text-2xl font-bold mb-4">Premium</h3>
-                    <p class="text-gray-600 mb-6">Soluzione completa</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Homepage avanzata con slider</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Pagina "Chi siamo" con foto</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Catalogo prodotti/servizi</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Galleria immagini</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Pagina contatti avanzata</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Form di contatto</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Ottimizzazione SEO avanzata</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i data-feather="check" class="text-primary mr-2"></i>
-                            <span>Integrazione social media</span>
-                        </li>
-                    </ul>
-                    <div class="text-3xl font-bold mb-6">€400-500</div>
-                    <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi preventivo</a>
-                </div>
-            </div>
-            
-            <p class="text-center text-gray-500 mb-16" data-aos="fade-up">Offerta valida solo per i primi 5 clienti del mese</p>
-            
-            <!-- Portfolio Section -->
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Alcuni dei miei lavori</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <div class="portfolio-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
-                    <img src="http://static.photos/retail/640x360/1" alt="Sito web negozio" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Negozio di abbigliamento</h3>
-                        <p class="text-gray-600">Sito vetrina con catalogo prodotti e galleria immagini.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                    <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-2xl font-bold mb-4">Base</h3>
+                        <p class="text-gray-600 mb-6">Perfetto per chi inizia</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Max 3 pagine</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Homepage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Design semplice e responsive</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">€350</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
-                </div>
-                
-                <div class="portfolio-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
-                    <img src="http://static.photos/restaurant/640x360/1" alt="Sito web ristorante" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Ristorante</h3>
-                        <p class="text-gray-600">Menù digitale con foto dei piatti e sistema prenotazioni.</p>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-primary relative" data-aos="fade-up" data-aos-delay="200">
+                        <div class="popular-badge absolute bg-primary text-white text-xs font-bold px-3 py-1 rounded-full -top-3 right-4">PIÙ SCELTO</div>
+                        <h3 class="text-2xl font-bold mb-4">Premium</h3>
+                        <p class="text-gray-600 mb-6">Soluzione completa</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Fino a 6 pagine</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Design personalizzato e responsive</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>SEO base</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Galleria immagini</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Pagina contatti avanzata</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">€500-700</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
-                </div>
-                
-                <div class="portfolio-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
-                    <img src="http://static.photos/workspace/640x360/1" alt="Sito web studio" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Studio professionale</h3>
-                        <p class="text-gray-600">Presentazione dei servizi con form di contatto avanzato.</p>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold mb-4">Restyle sito</h3>
+                        <p class="text-gray-600 mb-6">Per rinnovare il tuo sito esistente</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Aggiornamento di design e grafica</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Miglioramento della responsività</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Possibilità di aggiornare testi e contenuti</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">€150-200</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
-                </div>
-                
-                <div class="portfolio-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
-                    <img src="http://static.photos/retail/640x360/2" alt="Sito web negozio" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Negozio di elettronica</h3>
-                        <p class="text-gray-600">Catalogo prodotti con schede tecniche dettagliate.</p>
+                    
+                    <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-2xl font-bold mb-4">Manutenzione</h3>
+                        <p class="text-gray-600 mb-6">Per un sito sempre aggiornato e sicuro</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Aggiornamenti regolari</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Backup periodici</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Supporto tecnico per piccoli problemi</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">€20/mese</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
-                </div>
-                
-                <div class="portfolio-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
-                    <img src="http://static.photos/workspace/640x360/2" alt="Sito web studio" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Studio dentistico</h3>
-                        <p class="text-gray-600">Prenotazioni online e informazioni sui trattamenti.</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
-                    <img src="http://static.photos/retail/640x360/3" alt="Sito web negozio" class="w-full">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Fioraio</h3>
-                        <p class="text-gray-600">Galleria fotografica e sistema ordini online.</p>
+
+                    <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="text-2xl font-bold mb-4">Menu QR code</h3>
+                        <p class="text-gray-600 mb-6">Perfetto per ristoranti all'avanguardia</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Creazione di menu digitali</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Possibilità di aggiornare facilmente i prezzi</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <span>Design semplice e responsive</span>
+                            </li>
+                        </ul>
+                        <div class="text-3xl font-bold mb-6">€70</div>
+                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Pronto a far crescere il tuo business online?</h2>
-            <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contattami oggi stesso per un preventivo personalizzato.</p>
-            <a href="contact.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block" data-aos="fade-up" data-aos-delay="200">Richiedi preventivo</a>
-        </div>
-    </section>
+        <section class="py-20 bg-secondary">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Alcuni dei miei lavori</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="https://cmarine-source.github.io/Prova1/" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://i.imgur.com/aqa3ZlT.png" alt="Sito web negozio Cmarine" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Negozio di abbigliamento Cmarine</h3>
+                    <p class="text-gray-600">Sito vetrina con catalogo prodotti e galleria immagini.</p>
+                </div>
+            </a>
+            
+            </div>
+    </div>
+</section>
+        <section class="py-20 bg-primary text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Pronto a far crescere il tuo business online?</h2>
+                <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contattami oggi stesso per un preventivo personalizzato.</p>
+                <a href="contact.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block" data-aos="fade-up" data-aos-delay="200">Richiedi preventivo</a>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="mb-8 md:mb-0">
-                    <div class="text-2xl font-bold text-white mb-4">Logo</div>
+                    <div class="mb-4">
+                        <a href="index.html">
+                            <span class="text-2xl font-bold text-white">NexaWeb</span>
+                        </a>
+                    </div>
                     <p class="text-gray-400">Creo siti web moderni per negozi locali.</p>
                 </div>
                 
@@ -238,9 +257,9 @@
                     <div>
                         <h4 class="font-bold mb-4">Servizi</h4>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Siti vetrina</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Design responsive</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">Ottimizzazione mobile</a></li>
+                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Siti vetrina</a></li>
+                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Design responsive</a></li>
+                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Manutenzione</a></li>
                         </ul>
                     </div>
                     
@@ -249,11 +268,11 @@
                         <ul class="space-y-2">
                             <li class="flex items-center">
                                 <i data-feather="mail" class="mr-2 text-gray-400"></i>
-                                <span class="text-gray-400">info@example.com</span>
+                                <span class="text-gray-400">info@nexaweb.net</span>
                             </li>
                             <li class="flex items-center">
                                 <i data-feather="phone" class="mr-2 text-gray-400"></i>
-                                <span class="text-gray-400">+39 123 456 789</span>
+                                <span class="text-gray-400">+39 379 171 2954</span>
                             </li>
                         </ul>
                     </div>
@@ -261,11 +280,13 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2025 Marco – Tutti i diritti riservati</p>
+                <p>© 2025 NexaWeb – Tutti i diritti riservati</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
         AOS.init({
             duration: 800,
@@ -274,21 +295,11 @@
         });
         feather.replace();
         
-        // Mobile menu toggle
-        const mobileMenuButton = document.querySelector('.md\\:hidden');
-        const mobileMenu = document.querySelector('.md\\:flex');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-            mobileMenu.classList.toggle('flex-col');
-            mobileMenu.classList.toggle('absolute');
-            mobileMenu.classList.toggle('top-20');
-            mobileMenu.classList.toggle('left-0');
-            mobileMenu.classList.toggle('w-full');
-            mobileMenu.classList.toggle('bg-white');
-            mobileMenu.classList.toggle('p-4');
-            mobileMenu.classList.toggle('shadow-md');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
         });
     </script>
 </body>
