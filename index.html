@@ -46,17 +46,9 @@
             top: -12px;
             right: 16px;
         }
-        @media (max-width: 767px) {
-            .mobile-menu {
-                display: none;
-            }
-            .mobile-menu.active {
-                display: flex;
-            }
-        }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-white overflow-x-hidden">
     <header class="fixed w-full bg-white shadow-sm z-50 h-20">
         <div class="container mx-auto px-6 h-full flex items-center justify-between">
             <div class="logo-container">
@@ -74,7 +66,7 @@
                 <i data-feather="menu"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="mobile-menu absolute top-20 left-0 w-full bg-white p-4 shadow-md flex-col space-y-4 md:hidden">
+        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-white p-4 shadow-md flex flex-col space-y-4 md:hidden transform -translate-y-full transition-transform duration-300 ease-in-out">
             <a href="index.html" class="font-medium text-primary transition">Home</a>
             <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
             <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
@@ -257,7 +249,8 @@
         const mobileMenu = document.getElementById('mobile-menu');
         
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
+            // Aggiungi o rimuovi la classe 'active' per l'animazione
+            mobileMenu.classList.toggle('translate-y-full');
         });
     </script>
 </body>
