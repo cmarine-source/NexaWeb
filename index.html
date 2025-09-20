@@ -11,6 +11,7 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: #333333;
+            /* ✅ Risoluzione del problema: impedisce lo scorrimento orizzontale */
             overflow-x: hidden;
         }
         h1, h2, h3, h4 {
@@ -47,6 +48,7 @@
             top: -12px;
             right: 16px;
         }
+        /* ✅ Corretto: stili del menu mobile per mostrare/nascondere */
         @media (max-width: 767px) {
             .mobile-menu {
                 display: none;
@@ -59,25 +61,22 @@
 </head>
 <body class="bg-white">
     <header class="fixed w-full bg-white shadow-sm z-50 h-20">
-        <div class="container mx-auto h-full flex items-center justify-between px-6">
+        <div class="container mx-auto px-6 h-full flex items-center justify-between">
             <div class="logo-container">
                 <a href="index.html">
                     <img src="https://i.imgur.com/rrzawAZ.png" alt="Logo di NexaWeb" class="h-10">
                 </a>
             </div>
-            
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="font-medium text-primary transition">Home</a>
                 <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
                 <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
                 <a href="contact.html" class="font-medium hover:text-primary transition">Contatti</a>
             </nav>
-            
             <button class="md:hidden" id="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i data-feather="menu"></i>
             </button>
         </div>
-        
         <div id="mobile-menu" class="mobile-menu absolute top-20 left-0 w-full bg-white p-4 shadow-md flex-col space-y-4 md:hidden">
             <a href="index.html" class="font-medium text-primary transition">Home</a>
             <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
@@ -90,7 +89,7 @@
         <section class="pt-32 pb-20 bg-secondary">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Ciao, sono Marco – Creo siti web per negozi locali</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Ciao, sono Michael – Creo siti web per negozi locali</h1>
                     <p class="text-xl text-gray-600 mb-8">Siti vetrina moderni, veloci e ottimizzati per smartphone</p>
                     <a href="services.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block">Scopri i miei lavori</a>
                 </div>
@@ -104,7 +103,7 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Pacchetti su misura per il tuo business</h2>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="text-2xl font-bold mb-4">Base</h3>
                         <p class="text-gray-600 mb-6">Perfetto per chi inizia</p>
@@ -157,35 +156,6 @@
                             </li>
                         </ul>
                         <div class="text-3xl font-bold mb-6">€500-700</div>
-                        <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
-                    </div>
-                    
-                    <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-2xl font-bold mb-4">E-commerce</h3>
-                        <p class="text-gray-600 mb-6">Vendita online completa</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
-                                <span>Catalogo prodotti illimitato</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
-                                <span>Carrello e checkout</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
-                                <span>Metodi di pagamento</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
-                                <span>Gestione ordini</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
-                                <span>Area clienti</span>
-                            </li>
-                        </ul>
-                        <div class="text-3xl font-bold mb-6">Preventivo personalizzato</div>
                         <a href="contact.html" class="btn-primary px-6 py-2 rounded-full font-bold text-white inline-block w-full text-center">Richiedi info</a>
                     </div>
                 </div>
