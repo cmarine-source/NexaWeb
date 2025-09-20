@@ -46,6 +46,15 @@
             top: -12px;
             right: 16px;
         }
+        /* ✅ Corretto: stili del menu mobile per mostrare/nascondere */
+        @media (max-width: 767px) {
+            .mobile-menu {
+                display: none;
+            }
+            .mobile-menu.active {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body class="bg-white overflow-x-hidden">
@@ -66,7 +75,7 @@
                 <i data-feather="menu"></i>
             </button>
         </div>
-        <div id="mobile-menu" class="absolute top-20 left-0 w-full bg-white p-4 shadow-md flex flex-col space-y-4 md:hidden transform -translate-y-full transition-transform duration-300 ease-in-out">
+        <div id="mobile-menu" class="mobile-menu absolute top-20 left-0 w-full bg-white p-4 shadow-md flex-col space-y-4 md:hidden">
             <a href="index.html" class="font-medium text-primary transition">Home</a>
             <a href="about.html" class="font-medium hover:text-primary transition">Chi sono</a>
             <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
@@ -249,8 +258,8 @@
         const mobileMenu = document.getElementById('mobile-menu');
         
         mobileMenuBtn.addEventListener('click', () => {
-            // Aggiungi o rimuovi la classe 'active' per l'animazione
-            mobileMenu.classList.toggle('translate-y-full');
+            // ✅ Corretto: toggle della classe 'active'
+            mobileMenu.classList.toggle('active');
         });
     </script>
 </body>
