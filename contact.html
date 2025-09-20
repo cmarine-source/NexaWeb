@@ -6,8 +6,6 @@
     <title>Contatti - Web Designer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
@@ -58,7 +56,7 @@
         }
     </style>
 </head>
-<body class="bg-white overflow-x-hidden">
+<body class="bg-white">
     <header class="fixed w-full bg-white shadow-sm z-50 h-20">
         <div class="container mx-auto px-6 h-full flex items-center justify-between">
             <div class="logo-container">
@@ -72,7 +70,7 @@
                 <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
                 <a href="contact.html" class="font-medium text-primary transition">Contatti</a>
             </nav>
-            <button class="md:hidden" id="mobile-menu-btn">
+            <button class="md:hidden" id="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <i data-feather="menu"></i>
             </button>
         </div>
@@ -155,61 +153,62 @@
         </div>
     </section>
 
-  <section class="py-20 bg-gray-100">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-12" data-aos="fade-up">Domande Frequenti</h2>
-        
-        <div class="max-w-3xl mx-auto space-y-4">
-            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
-                    <span class="flex-grow">Quanto tempo ci vuole per realizzare un sito?</span>
-                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </summary>
-                <div class="mt-4 text-gray-600 leading-relaxed">
-                    <p>In media, un sito base viene completato in 1 settimana, mentre un sito premium richiede 2-3 settimane. I tempi possono variare in base alla complessità del progetto e alla disponibilità del materiale da parte del cliente.</p>
-                </div>
-            </details>
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-extrabold text-center text-gray-800 mb-12" data-aos="fade-up">Domande Frequenti</h2>
             
-            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
-                    <span class="flex-grow">Fornite anche il servizio di hosting?</span>
-                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </summary>
-                <div class="mt-4 text-gray-600 leading-relaxed">
-                    <p>Non offro direttamente il servizio di hosting, ma posso consigliarti soluzioni affidabili e aiutarti a configurarle correttamente. In alternativa, posso occuparmi io della gestione dell’hosting e della manutenzione del sito con un piccolo pacchetto aggiuntivo, così non dovrai preoccuparti di nulla.</p>
-                </div>
-            </details>
-            
-            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
-                    <span class="flex-grow">Posso modificare il sito da solo dopo la consegna?</span>
-                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </summary>
-                <div class="mt-4 text-gray-600 leading-relaxed">
-                    <p>Certamente! Tutti i miei siti vengono realizzati con un sistema di gestione dei contenuti (CMS) intuitivo che ti permette di aggiornare testi, immagini e prodotti in completa autonomia.</p>
-                </div>
-            </details>
-            
-            <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="400">
-                <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
-                    <span class="flex-grow">Offrite servizi di manutenzione?</span>
-                    <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </summary>
-                <div class="mt-4 text-gray-600 leading-relaxed">
-                    <p>Sì, offro pacchetti di manutenzione che includono aggiornamenti di sicurezza, backup regolari e supporto tecnico. Possiamo discuterne insieme in base alle tue esigenze.</p>
-                </div>
-            </details>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                        <span class="flex-grow">Quanto tempo ci vuole per realizzare un sito?</span>
+                        <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        <p>In media, un sito base viene completato in 1 settimana, mentre un sito premium richiede 2-3 settimane. I tempi possono variare in base alla complessità del progetto e alla disponibilità del materiale da parte del cliente.</p>
+                    </div>
+                </details>
+                
+                <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                        <span class="flex-grow">Fornite anche il servizio di hosting?</span>
+                        <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        <p>Non offro direttamente il servizio di hosting, ma posso consigliarti soluzioni affidabili e aiutarti a configurarle correttamente. In alternativa, posso occuparmi io della gestione dell’hosting e della manutenzione del sito con un piccolo pacchetto aggiuntivo, così non dovrai preoccuparti di nulla.</p>
+                    </div>
+                </details>
+                
+                <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                    <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                        <span class="flex-grow">Posso modificare il sito da solo dopo la consegna?</span>
+                        <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        <p>Certamente! Tutti i miei siti vengono realizzati con un sistema di gestione dei contenuti (CMS) intuitivo che ti permette di aggiornare testi, immagini e prodotti in completa autonomia.</p>
+                    </div>
+                </details>
+                
+                <details class="group bg-white p-6 rounded-xl shadow-md cursor-pointer transition-all duration-300 hover:shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <summary class="flex justify-between items-center text-xl font-semibold text-gray-700 list-none">
+                        <span class="flex-grow">Offrite servizi di manutenzione?</span>
+                        <svg class="w-6 h-6 flex-shrink-0 text-primary transition-transform duration-300 transform group-open:rotate-90" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 leading-relaxed">
+                        <p>Sì, offro pacchetti di manutenzione che includono aggiornamenti di sicurezza, backup regolari e supporto tecnico. Possiamo discuterne insieme in base alle tue esigenze.</p>
+                    </div>
+                </details>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between">
@@ -260,6 +259,8 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
         AOS.init({
             duration: 800,
@@ -275,7 +276,6 @@
             mobileMenu.classList.toggle('active');
         });
         
-        // Il tuo script per le FAQ è stato mantenuto
         const faqItems = document.querySelectorAll('.group');
         faqItems.forEach(item => {
             const summary = item.querySelector('summary');
@@ -283,14 +283,12 @@
                 e.preventDefault();
                 const wasOpen = item.hasAttribute('open');
                 
-                // Close all others
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.removeAttribute('open');
                     }
                 });
 
-                // Toggle the current one
                 if (wasOpen) {
                     item.removeAttribute('open');
                 } else {
@@ -298,7 +296,6 @@
                 }
             });
         });
-
     </script>
 </body>
 </html>
