@@ -58,8 +58,8 @@
         }
     </style>
 </head>
-<body class="bg-white">
-    <header class="fixed w-full bg-white shadow-sm z-50" style="height: 80px;">
+<body class="bg-white overflow-x-hidden">
+    <header class="fixed w-full bg-white shadow-sm z-50 h-20">
         <div class="container mx-auto px-6 h-full flex items-center justify-between">
             <div class="logo-container">
                 <a href="index.html">
@@ -275,37 +275,30 @@
             mobileMenu.classList.toggle('active');
         });
         
-        const faqItems = document.querySelectorAll('.faq-item');
+        // Il tuo script per le FAQ è stato mantenuto
+        const faqItems = document.querySelectorAll('.group');
         faqItems.forEach(item => {
-            const heading = item.querySelector('h3');
-            const content = item.querySelector('p');
-            const icon = item.querySelector('i');
-            
-            heading.addEventListener('click', () => {
-                const isHidden = content.classList.contains('hidden');
+            const summary = item.querySelector('summary');
+            summary.addEventListener('click', (e) => {
+                e.preventDefault();
+                const wasOpen = item.hasAttribute('open');
                 
-                // Chiudi tutte le altre risposte
+                // Close all others
                 faqItems.forEach(otherItem => {
-                    const otherContent = otherItem.querySelector('p');
-                    const otherIcon = otherItem.querySelector('i');
-                    if (otherContent !== content && !otherContent.classList.contains('hidden')) {
-                        otherContent.classList.add('hidden');
-                        otherIcon.setAttribute('data-feather', 'chevron-right');
+                    if (otherItem !== item) {
+                        otherItem.removeAttribute('open');
                     }
                 });
-                
-                // Apri/chiudi la risposta corrente
-                content.classList.toggle('hidden');
-                
-                // Cambia l'icona
-                if (isHidden) {
-                    icon.setAttribute('data-feather', 'chevron-down');
+
+                // Toggle the current one
+                if (wasOpen) {
+                    item.removeAttribute('open');
                 } else {
-                    icon.setAttribute('data-feather', 'chevron-right');
+                    item.setAttribute('open', 'open');
                 }
-                feather.replace();
             });
         });
+
     </script>
 </body>
 </html>
