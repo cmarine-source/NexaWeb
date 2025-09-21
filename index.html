@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Web Designer</title>
+    <title>Home - NexaWeb</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: #333333;
-            /* ✅ Risoluzione del problema: impedisce lo scorrimento orizzontale */
             overflow-x: hidden;
         }
         h1, h2, h3, h4 {
@@ -49,7 +48,6 @@
             top: -12px;
             right: 16px;
         }
-        /* ✅ Corretto: stili del menu mobile per mostrare/nascondere */
         @media (max-width: 767px) {
             .mobile-menu {
                 display: none;
@@ -58,11 +56,77 @@
                 display: flex;
             }
         }
+        :root {
+            --primary-color: #0077B6;
+        }
+        .text-primary {
+            color: var(--primary-color);
+        }
+        /* Stili per la Hero Section */
+        .hero-section {
+            position: relative;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Stili per schermi mobili */
+        @media (max-width: 1023px) {
+            .hero-section {
+                padding-top: 8rem; /* Spazio ridotto per il telefono */
+            }
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+        }
+        
+        /* Stili per schermi grandi (desktop) */
+        @media (min-width: 1024px) {
+            .hero-section {
+                height: 100vh;
+                color: white;
+                padding-top: 0;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .hero-background {
+                background-image: url('https://i.imgur.com/dm2E3Wi.png');
+                background-size: cover;
+                background-position: center;
+                position: absolute;
+                inset: 0;
+            }
+            .hero-background::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+            .hero-content {
+                flex-direction: column;
+            }
+            .hero-text span {
+                color: var(--primary-color);
+            }
+        }
     </style>
 </head>
 <body class="bg-white">
     <header class="fixed w-full bg-white shadow-sm z-50 h-20">
-        <div class="container mx-auto px-6 h-full flex items-center justify-between">
+        <div class="container mx-auto px-6 h-full flex items-center justify-between max-w-7xl">
             <div class="logo-container">
                 <a href="index.html">
                     <img src="https://i.imgur.com/rrzawAZ.png" alt="Logo di NexaWeb, siti-vetrina-gaeta" class="h-10">
@@ -74,8 +138,8 @@
                 <a href="services.html" class="font-medium hover:text-primary transition">Servizi</a>
                 <a href="contact.html" class="font-medium hover:text-primary transition">Contatti</a>
             </nav>
-            <button class="md:hidden" id="mobile-menu-btn" aria-label="Toggle mobile menu">
-                <i data-feather="menu"></i>
+            <button class="md:hidden text-2xl" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <i id="menu-icon" class="fa-solid fa-bars"></i>
             </button>
         </div>
         <div id="mobile-menu" class="mobile-menu absolute top-20 left-0 w-full bg-white p-4 shadow-md flex-col space-y-4 md:hidden">
@@ -87,42 +151,44 @@
     </header>
 
     <main>
-        <section class="pt-32 pb-20 bg-secondary">
-            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Ciao, sono Michael – Creo siti web per negozi locali</h1>
-                    <p class="text-xl text-gray-600 mb-8">Siti vetrina moderni, veloci e ottimizzati per smartphone</p>
+        <section class="hero-section" data-aos="fade-up">
+            <div class="hero-background absolute inset-0 bg-cover bg-center hidden lg:block"></div>
+            <div class="container mx-auto px-6 max-w-7xl z-10 hero-content flex flex-col items-center gap-16">
+                <div class="lg:w-3/5 hero-text" data-aos="fade-right">
+                    <span class="text-sm font-bold uppercase tracking-wider mb-2 block text-primary">Il tuo partner digitale</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-black lg:text-white">Trasformo le idee in siti web che funzionano.</h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-auto lg:text-gray-200">Siti vetrina moderni, veloci e ottimizzati per convertire i visitatori in clienti.</p>
                     <a href="services.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block">Scopri i miei lavori</a>
                 </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <img src="https://i.imgur.com/dm2E3Wi.png" alt="Mockup di un sito web reattivo su computer, tablet e smartphone" class="rounded-lg shadow-xl">
+                <div class="lg:w-2/5 md:block lg:hidden" data-aos="fade-left">
+                    <img src="https://i.imgur.com/4lJtiOp.png" alt="Mockup di un sito web reattivo su computer, tablet e smartphone" class="rounded-lg shadow-xl w-full">
                 </div>
             </div>
         </section>
-
-        <section class="py-20">
-            <div class="container mx-auto px-6">
+        
+        <section class="py-24">
+            <div class="container mx-auto px-6 max-w-7xl">
                 <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Pacchetti su misura per il tuo business</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 md:px-12">
                     <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="text-2xl font-bold mb-4">Base</h3>
                         <p class="text-gray-600 mb-6">Perfetto per chi inizia</p>
                         <ul class="space-y-3 mb-8">
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>Max 3 pagine</span>
                             </li>
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>Homepage</span>
                             </li>
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>Design semplice</span>
                             </li>
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>Ottimizzazione mobile</span>
                             </li>
                         </ul>
@@ -136,23 +202,19 @@
                         <p class="text-gray-600 mb-6">Soluzione completa</p>
                         <ul class="space-y-3 mb-8">
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
-                                <span>Fino a 6 pagine</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>Design personalizzato e responsive</span>
                             </li>
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>SEO base</span>
                             </li>
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>Galleria immagini</span>
                             </li>
                             <li class="flex items-center">
-                                <i data-feather="check" class="text-primary mr-2"></i>
+                                <i class="fa-solid fa-check text-primary mr-2"></i>
                                 <span>Pagina contatti avanzata</span>
                             </li>
                         </ul>
@@ -165,11 +227,11 @@
             </div>
         </section>
 
-        <section class="py-20 bg-primary text-white">
-            <div class="container mx-auto px-6">
+        <section class="py-24 bg-primary text-white">
+            <div class="container mx-auto px-6 max-w-7xl">
                 <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Cosa dicono i miei clienti</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="max-w-xl mx-auto">
                     <div class="bg-white bg-opacity-10 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
                         <div class="flex items-center mb-4">
                             <img src="https://i.imgur.com/CNfFqtv.png" alt="Ritratto di Nino Gaetano, cliente soddisfatto" class="w-12 h-12 rounded-full mr-4">
@@ -184,8 +246,8 @@
             </div>
         </section>
 
-        <section class="py-20 bg-secondary">
-            <div class="container mx-auto px-6 text-center">
+        <section class="py-24 bg-secondary">
+            <div class="container mx-auto px-6 max-w-7xl text-center">
                 <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Pronto a far crescere il tuo business online?</h2>
                 <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Contattami oggi stesso per un preventivo personalizzato.</p>
                 <a href="contact.html" class="btn-primary px-8 py-3 rounded-full font-bold text-white inline-block" data-aos="fade-up" data-aos-delay="200">Richiedi preventivo</a>
@@ -193,9 +255,9 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between">
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-x-16 gap-y-12">
                 <div class="mb-8 md:mb-0">
                     <div class="mb-4">
                         <a href="index.html">
@@ -205,50 +267,39 @@
                     <p class="text-gray-400">Creo siti web moderni per negozi locali.</p>
                 </div>
 
-                <div class="mb-8 md:mb-0">
-                    <h4 class="font-bold mb-4">Seguimi</h4>
-                    <div class="flex space-x-4">
-                        <a href="URL_DEL_TUO_PROFILO_INSTAGRAM" target="_blank" class="text-gray-400 hover:text-white transition">
-                            <i class="fa-brands fa-instagram text-2xl"></i>
-                        </a>
-                        <a href="URL_DEL_TUO_PROFILO_FACEBOOK" target="_blank" class="text-gray-400 hover:text-white transition">
-                            <i class="fa-brands fa-facebook text-2xl"></i>
-                        </a>
-                    </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-white">Navigazione</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">Chi sono</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">Servizi</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contatti</a></li>
+                    </ul>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="font-bold mb-4">Navigazione</h4>
-                        <ul class="space-y-2">
-                            <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-                            <li><a href="about.html" class="text-gray-400 hover:text-white transition">Chi sono</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Servizi</a></li>
-                            <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contatti</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-bold mb-4">Servizi</h4>
-                        <ul class="space-y-2">
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Siti vetrina</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Design responsive</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Manutenzione</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-bold mb-4">Contatti</h4>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <i data-feather="mail" class="mr-2 text-gray-400"></i>
-                                <span class="text-gray-400">info@nexaweb.net</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-feather="phone" class="mr-2 text-gray-400"></i>
-                                <span class="text-gray-400">+39 379 171 2954</span>
-                            </li>
-                        </ul>
+                <div>
+                    <h4 class="font-bold mb-4 text-white">Contatti</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">info@nexaweb.net</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">+39 379 171 2954</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-location-dot mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">Gaeta, Italia</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="URL_DEL_TUO_PROFILO_INSTAGRAM" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Profilo Instagram">
+                            <i class="fa-brands fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="URL_DEL_TUO_PROFILO_FACEBOOK" target="_blank" class="text-gray-400 hover:text-white transition" aria-label="Profilo Facebook">
+                            <i class="fa-brands fa-facebook text-2xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -260,20 +311,26 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
-        feather.replace();
         
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+        const menuIcon = document.getElementById('menu-icon');
+
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
+            const isMenuOpen = mobileMenu.classList.toggle('active');
+            if (isMenuOpen) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            }
         });
     </script>
 </body>
