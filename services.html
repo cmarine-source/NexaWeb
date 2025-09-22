@@ -54,6 +54,22 @@
                 display: flex;
             }
         }
+        /* Stili per il carosello */
+        .snap-mandatory > * {
+            scroll-snap-align: center;
+        }
+        /* Per gestire le proporzioni delle immagini */
+        .aspect-w-16 {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .aspect-w-16 img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="bg-white overflow-x-hidden">
@@ -210,14 +226,63 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Alcuni dei miei lavori</h2>
                 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <a href="https://cmarine-source.github.io/Prova1/" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://i.imgur.com/aqa3ZlT.png" alt="Sito web negozio Cmarine" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Negozio di abbigliamento Cmarine</h3>
-                            <p class="text-gray-600">Sito vetrina con catalogo prodotti e galleria immagini.</p>
-                        </div>
-                    </a>
+                <div class="relative max-w-5xl mx-auto">
+                    <div id="projects-container" class="flex overflow-x-hidden snap-x snap-mandatory scroll-smooth relative gap-x-8 pb-4"> <a href="https://cmarine-source.github.io/caffetteria/" target="_blank" rel="noopener noreferrer" 
+                           class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <img src="https://i.imgur.com/YClEgwI.jpeg" alt="Sito web Caffetteria caffè artigiano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Caffetteria caffè artigiano</h3>
+                                <p class="text-gray-600 text-sm">Sito vetrina moderno con menu interattivo e sezione contatti.</p>
+                                <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
+                            </div>
+                        </a>
+
+                        <a href="https://cmarine-source.github.io/Prova1/" target="_blank" rel="noopener noreferrer" 
+                           class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <img src="https://i.imgur.com/k563JTH.jpeg" alt="Sito web Negozio di abbigliamento Cmarine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Negozio di abbigliamento Cmarine</h3>
+                                <p class="text-gray-600 text-sm">E-commerce con catalogo prodotti e galleria immagini dettagliata.</p>
+                                <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
+                            </div>
+                        </a>
+
+                        <a href="https://cmarine-source.github.io/eventSummit/" target="_blank" rel="noopener noreferrer" 
+                           class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <img src="https://i.imgur.com/0hIURpj.jpeg" alt="Sito web evento Digital Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Event Digital Marketing Summit 2025</h3>
+                                <p class="text-gray-600 text-sm">Sito evento con countdown, modulo di iscrizione e agenda.</p>
+                                <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
+                            </div>
+                        </a>
+                        
+                        <a href="#" target="_blank" rel="noopener noreferrer" 
+                           class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                            <div class="aspect-w-16 aspect-h-9">
+                                <img src="https://via.placeholder.com/600x338.png?text=Nuovo+Progetto+4" alt="Progetto 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Progetto di Design Moderno</h3>
+                                <p class="text-gray-600 text-sm">Un sito web pulito e intuitivo per un portfolio creativo.</p>
+                                <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
+                            </div>
+                        </a>
+
+                    </div>
+                    
+                    <button id="prev-btn" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:scale-110 transition disabled:opacity-30 disabled:cursor-not-allowed hidden md:block">
+                        <i data-feather="chevron-left" class="w-6 h-6 text-gray-800"></i>
+                    </button>
+                    <button id="next-btn" class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:scale-110 transition disabled:opacity-30 disabled:cursor-not-allowed hidden md:block">
+                        <i data-feather="chevron-right" class="w-6 h-6 text-gray-800"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -300,6 +365,47 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
+        });
+        
+        // Codice per il carosello
+        const projectsContainer = document.getElementById('projects-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        function getScrollAmount() {
+            // Ottiene la larghezza del primo elemento del progetto (card)
+            const firstProject = projectsContainer.querySelector('a');
+            if (!firstProject) return 0;
+
+            const style = window.getComputedStyle(firstProject);
+            const marginRight = parseFloat(style.marginRight || 0); // Per il gap tra gli elementi
+            
+            // Larghezza effettiva dell'elemento + eventuale margine/gap
+            return firstProject.offsetWidth + marginRight; 
+        }
+
+        function checkButtons() {
+            // Disabilita/abilita le frecce in base alla posizione dello scroll
+            prevBtn.disabled = projectsContainer.scrollLeft <= 10; // Un piccolo offset per evitare problemi di floating point
+            nextBtn.disabled = projectsContainer.scrollLeft + projectsContainer.clientWidth >= projectsContainer.scrollWidth - 10;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            projectsContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            setTimeout(checkButtons, 300); // Ritarda il controllo per permettere l'animazione di scorrimento
+        });
+
+        prevBtn.addEventListener('click', () => {
+            projectsContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            setTimeout(checkButtons, 300);
+        });
+
+        // Controlla lo stato iniziale dei bottoni e ad ogni scroll o ridimensionamento
+        window.addEventListener('load', checkButtons);
+        projectsContainer.addEventListener('scroll', checkButtons);
+        window.addEventListener('resize', () => {
+            // Ricalcola la larghezza di scorrimento e controlla i bottoni al ridimensionamento
+            checkButtons();
         });
     </script>
 </body>
