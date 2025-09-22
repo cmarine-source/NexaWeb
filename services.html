@@ -70,6 +70,14 @@
             height: 100%;
             object-fit: cover;
         }
+        /* Nasconde la scrollbar per un design più pulito */
+        .hide-scrollbar {
+            -ms-overflow-style: none; /* Per Internet Explorer e Edge */
+            scrollbar-width: none; /* Per Firefox */
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none; /* Per Chrome, Safari e Opera */
+        }
     </style>
 </head>
 <body class="bg-white overflow-x-hidden">
@@ -227,7 +235,8 @@
                 <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Alcuni dei miei lavori</h2>
                 
                 <div class="relative max-w-5xl mx-auto">
-                    <div id="projects-container" class="flex overflow-x-hidden snap-x snap-mandatory scroll-smooth relative gap-x-8 pb-4"> <a href="https://cmarine-source.github.io/caffetteria/" target="_blank" rel="noopener noreferrer" 
+                    <div id="projects-container" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth relative gap-x-8 pb-4 hide-scrollbar">
+                        <a href="https://cmarine-source.github.io/caffetteria/" target="_blank" rel="noopener noreferrer" 
                            class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                             <div class="aspect-w-16 aspect-h-9">
                                 <img src="https://i.imgur.com/YClEgwI.jpeg" alt="Sito web Caffetteria caffè artigiano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
@@ -238,7 +247,6 @@
                                 <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
                             </div>
                         </a>
-
                         <a href="https://cmarine-source.github.io/Prova1/" target="_blank" rel="noopener noreferrer" 
                            class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                             <div class="aspect-w-16 aspect-h-9">
@@ -250,7 +258,6 @@
                                 <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
                             </div>
                         </a>
-
                         <a href="https://cmarine-source.github.io/eventSummit/" target="_blank" rel="noopener noreferrer" 
                            class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                             <div class="aspect-w-16 aspect-h-9">
@@ -262,7 +269,6 @@
                                 <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
                             </div>
                         </a>
-                        
                         <a href="#" target="_blank" rel="noopener noreferrer" 
                            class="min-w-[90%] md:min-w-[70%] lg:min-w-[45%] snap-center group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                             <div class="aspect-w-16 aspect-h-9">
@@ -274,7 +280,6 @@
                                 <span class="inline-block mt-4 text-primary font-semibold hover:underline">Vedi progetto &rarr;</span>
                             </div>
                         </a>
-
                     </div>
                     
                     <button id="prev-btn" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg hover:scale-110 transition disabled:opacity-30 disabled:cursor-not-allowed hidden md:block">
@@ -376,23 +381,20 @@
             // Ottiene la larghezza del primo elemento del progetto (card)
             const firstProject = projectsContainer.querySelector('a');
             if (!firstProject) return 0;
-
             const style = window.getComputedStyle(firstProject);
             const marginRight = parseFloat(style.marginRight || 0); // Per il gap tra gli elementi
-            
-            // Larghezza effettiva dell'elemento + eventuale margine/gap
             return firstProject.offsetWidth + marginRight; 
         }
 
         function checkButtons() {
             // Disabilita/abilita le frecce in base alla posizione dello scroll
-            prevBtn.disabled = projectsContainer.scrollLeft <= 10; // Un piccolo offset per evitare problemi di floating point
+            prevBtn.disabled = projectsContainer.scrollLeft <= 10;
             nextBtn.disabled = projectsContainer.scrollLeft + projectsContainer.clientWidth >= projectsContainer.scrollWidth - 10;
         }
 
         nextBtn.addEventListener('click', () => {
             projectsContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-            setTimeout(checkButtons, 300); // Ritarda il controllo per permettere l'animazione di scorrimento
+            setTimeout(checkButtons, 300);
         });
 
         prevBtn.addEventListener('click', () => {
@@ -400,13 +402,9 @@
             setTimeout(checkButtons, 300);
         });
 
-        // Controlla lo stato iniziale dei bottoni e ad ogni scroll o ridimensionamento
         window.addEventListener('load', checkButtons);
         projectsContainer.addEventListener('scroll', checkButtons);
-        window.addEventListener('resize', () => {
-            // Ricalcola la larghezza di scorrimento e controlla i bottoni al ridimensionamento
-            checkButtons();
-        });
+        window.addEventListener('resize', checkButtons);
     </script>
 </body>
 </html>
